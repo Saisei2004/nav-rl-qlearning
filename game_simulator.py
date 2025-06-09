@@ -331,8 +331,20 @@ class Game:
                         self.obstacles.append(Obstacle(x, y, w, h))
                         avoid_rects.append(rect)
                         break
-
             self.dynamic_obstacles = []
+            for _ in range(3):
+                for _ in range(100):
+                    x = random.randint(50, WIDTH - 90)
+                    y = random.randint(50, HEIGHT - 90)
+                    w = random.randint(30, 60)
+                    h = random.randint(30, 60)
+                    rect = pygame.Rect(x, y, w, h)
+                    if not any(rect.colliderect(ar) for ar in avoid_rects):
+                        self.dynamic_obstacles.append(CircularObstacle(x, y, w, h))
+                        avoid_rects.append(rect)
+                        break
+
+            
 
         elif self.mode == "Step_7":
             self.room_w = WIDTH // 2
@@ -367,6 +379,17 @@ class Game:
             obstacle_count = random.randint(3, 10)
             self.obstacles = self.generate_static_obstacles(obstacle_count, avoid_rects)
             self.dynamic_obstacles = []  # 今回は使わない
+            for _ in range(2):
+                for _ in range(100):
+                    x = random.randint(50, WIDTH - 90)
+                    y = random.randint(50, HEIGHT - 90)
+                    w = random.randint(30, 60)
+                    h = random.randint(30, 60)
+                    rect = pygame.Rect(x, y, w, h)
+                    if not any(rect.colliderect(ar) for ar in avoid_rects):
+                        self.dynamic_obstacles.append(AppearingObstacle(x, y, w, h))
+                        avoid_rects.append(rect)
+                        break
 
             # ドアが動的ならこの辺の記述が必要ですが今回は空
             unique_door_list = self.generate_unique_doors()
@@ -884,6 +907,6 @@ class Game:
 
 
 if __name__ == "__main__":
-    game = Game(obstacle_count=10, mode="Step_9")
+    game = Game(obstacle_count=10, mode="Step_7")
     game.run()
 
