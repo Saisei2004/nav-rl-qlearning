@@ -5,13 +5,13 @@ import numpy as np
 print(LIDAR_MAX_DISTANCE)
 class GameEnv:
     def __init__(self, reward_fn=None):
-        self.game = Game(mode="Step_0")
+        self.game = Game(mode="Step_1")
         self.reward_fn = reward_fn if reward_fn else self.default_reward
         self.done = False
 
     def reset(self):
         # ゲーム状態を初期化
-        self.game = Game(mode="Step_0")
+        self.game = Game(mode="Step_1")
         self.done = False
         return self.get_state()
 
