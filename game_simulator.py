@@ -884,6 +884,6 @@ class Game:
 
 
 if __name__ == "__main__":
-    game = Game(obstacle_count=10, mode="Step_7q")
+    game = Game(obstacle_count=10, mode="Step_9")
     game.run()
 
