@@ -1,0 +1,4 @@
+gym
+gymnasium
+stable-baselines3
+numpy
