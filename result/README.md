@@ -14,14 +14,13 @@
 
 - 報酬設計や探索率、状態離散化などを**固定**のまま学習。
 - パラメータ・報酬・探索率のチューニングを**行わない**。
-[コードはこちら]([https://example.com](https://github.com/Saisei2004/nav-rl-qlearning/blob/main/train_rl_o.py))
 
+[コードはこちら](https://github.com/Saisei2004/nav-rl-qlearning/blob/main/train_rl_o.py)
 
 ### 2. **調整型方式**（パラメータ工夫型Q学習）
 
 - 状態離散化・報酬設計・探索率などを**段階的に調整・工夫**し、学習効率と安定性を向上させる工夫を加えた。
-[コードはこちら]([https://example.com](https://github.com/Saisei2004/nav-rl-qlearning/blob/main/train_rl.py))
-
+[コードはこちら](https://github.com/Saisei2004/nav-rl-qlearning/blob/main/train_rl.py)
 
 ---
 
